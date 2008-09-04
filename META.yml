@@ -1,0 +1,23 @@
+---
+abstract: 'A Catalyst View for Graphics::Primitive'
+author:
+  - 'Cory Watson, C<< <gphat@cpan.org> >>'
+build_requires:
+  Pod::Coverage::Moose: 0
+distribution_type: module
+generated_by: 'Module::Install version 0.75'
+license: perl
+meta-spec:
+  url: http://module-build.sourceforge.net/META-spec-v1.3.html
+  version: 1.3
+name: Catalyst-View-Graphics-Primitive
+no_index:
+  directory:
+    - inc
+    - t
+requires:
+  Catalyst::Runtime: 5.7014
+  Graphics::Primitive: 0.26
+  Moose: 0.57
+  Scalar::Util: 1.19
+version: 0.01
