@@ -17,7 +17,7 @@ no_index:
     - t
 requires:
   Catalyst::Runtime: 5.7014
-  Graphics::Primitive: 0.26
+  Graphics::Primitive: 0.29
   Moose: 0.57
   Scalar::Util: 1.19
-version: 0.01
+version: 0.02
