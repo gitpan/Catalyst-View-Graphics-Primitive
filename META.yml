@@ -2,8 +2,6 @@
 abstract: 'A Catalyst View for Graphics::Primitive'
 author:
   - 'Cory Watson, C<< <gphat@cpan.org> >>'
-build_requires:
-  Pod::Coverage::Moose: 0
 distribution_type: module
 generated_by: 'Module::Install version 0.75'
 license: perl
@@ -20,4 +18,4 @@ requires:
   Graphics::Primitive: 0.29
   Moose: 0.57
   Scalar::Util: 1.19
-version: 0.03
+version: 0.04
