@@ -1,5 +1,8 @@
 Revision history for Catalyst-View-Graphics-Primitive
 
+0.06    2014-01-04
+  - Use Class::Load (reported by Lucas Moraes)
+
 0.05    November 19, 2009
   - Fix broken M:I
 

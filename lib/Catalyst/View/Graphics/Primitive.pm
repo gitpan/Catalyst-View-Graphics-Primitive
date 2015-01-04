@@ -3,12 +3,12 @@ package Catalyst::View::Graphics::Primitive;
 use strict;
 use warnings;
 
-use Class::MOP;
+use Class::Load ':all';
 use Scalar::Util 'blessed';
 
 use Catalyst::Exception;
 
-our $VERSION   = '0.05';
+our $VERSION   = '0.06';
 our $AUTHORITY = 'cpan:GPHAT';
 
 use base 'Catalyst::View';
@@ -39,7 +39,7 @@ sub process {
         if($dname =~ /^\+(.*)/) {
             $dclass = $1;
         }
-        my $meta = Class::MOP::load_class($dclass);
+        my $meta = load_class($dclass);
         unless(defined($meta)) {
             die("Couldn't load driver: $dclass");
         }
@@ -75,7 +75,7 @@ Catalyst::View::Graphics::Primitive - A Catalyst View for Graphics::Primitive
   package MyApp::View::GP
   use base 'Catalyst::View::Graphics::Primitive';
   1;
-  
+
   # configure in lib/MyApp.pm
   MyApp->config(
     ...
@@ -121,9 +121,9 @@ for the Cairo driver would be:
           content_type => 'application/pdf'
       }
   );
- 
+
 =back
- 
+
 All of these options can be overridden at request time by prefixing the name
 with C<graphics_primitive_> and setting the value in the stash.  For example,
 to override the driver, args and content type:
@@ -142,7 +142,7 @@ The constructor for a new Graphics::Primitive view.
 
 Renders the Graphics::Primitive::Component object stored in
 C<< $c->stash->{graphics_primitive} >> using the driver specified in the
-configuration or in C<< $c->stash->{graphics_primitive_driver} >> (for 
+configuration or in C<< $c->stash->{graphics_primitive_driver} >> (for
 runtime changes). The driver will instantiated using driver_args from the
 configuration or C<< $c->stash->{graphics_primitive_driver_args} >>.  The
 component will then be moved through the Graphics::Primitive rendering
